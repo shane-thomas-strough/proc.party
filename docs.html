@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PROC Education & Docs</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-brand" onclick="goToPage('index.html')">
+      <img src="images/ProcLogo.png" alt="Sloth Logo" class="logo"/>
+      <span>PROC</span>
+    </div>
+    <ul class="nav-links">
+      <li onclick="goToPage('dashboard.html')">Dashboard</li>
+      <li onclick="goToPage('minigames.html')">Mini-Games</li>
+      <li onclick="goToPage('leaderboards.html')">Leaderboards</li>
+      <li onclick="goToPage('chat.html')">Chat</li>
+      <li onclick="goToPage('docs.html')">Docs</li>
+      <li onclick="goToPage('disclaimers.html')">Disclaimer</li>
+      <li onclick="goToPage('news.html')">News</li>
+      <li onclick="goToPage('whitepaper.html')">Whitepaper</li>
+      <li><a href="https://bscscan.com/token/0x372dC085148adDeA482671473BFa97a27DEA7081" target="_blank">📜 Contract</a></li>
+      <li onclick="goToPage('how-to-buy.html')">How to Buy PROC</li>
+
+    </ul>
+    <button class="btn neon-btn" onclick="connectWallet()">Connect Wallet</button>
+  </nav>
+
+  <main class="docs-container">
+    <h1>PROC Education & Documentation</h1>
+
+    <section class="doc-section">
+      <h2>What is $PROC?</h2>
+      <p>
+        $PROC is a deflationary token on the Binance Smart Chain (BSC) that rewards holders
+        through reflections and offers a playful “slothverse” of mini-games. Essentially,
+        you can <strong>earn while you wait</strong>—the perfect token for those who
+        want to hold or those who love crypto-themed fun.
+      </p>
+    </section>
+
+    <section class="doc-section">
+      <h2>Whitepaper</h2>
+      <p>
+      </p>
+      <ul>
+        <li>
+          <a href="whitepaper.html" target="_blank" style="color:#58ffe8; font-weight:bold;">
+            Read the Full Whitepaper Here
+          </a>
+        </li>
+      </ul>
+      <p>
+        Highlights include:
+        <ul>
+          <li><strong>Total Supply:</strong> 1,618,033,988,000 $PROC</li>
+          <li><strong>Initial Tax:</strong> 16% (4% reflections, 2% burn, 3% liquidity, 3% marketing, 
+            2% dev, 2% gaming)</li>
+          <li><strong>Tax Reduction:</strong> 10% after alpha mini-game launch or 2 months</li>
+          <li><strong>21+ Mini-Games:</strong> All integrating $PROC for burning, rewards, or both</li>
+          <li><strong>Roadmap:</strong> Liquidity lock, community growth, alpha mini-games, cross-chain expansions</li>
+        </ul>
+      </p>
+    </section>
+
+    <section class="doc-section">
+      <h2>Quick Start: How to Buy $PROC</h2>
+      <ol>
+        <li>Install a BSC-compatible wallet (e.g., MetaMask).</li>
+        <li>Switch your wallet network to Binance Smart Chain.</li>
+        <li>Go to <a href="https://pancakeswap.finance/swap?outputCurrency=0x372dC085148adDeA482671473BFa97a27DEA7081" target="_blank">
+            PancakeSwap</a> and import $PROC’s contract address.</li>
+        <li>Swap BNB for $PROC (set slippage ~20% at launch).</li>
+
+      </ol>
+    </section>
+
+    <section class="doc-section">
+      <h2>Roadmap & Development</h2>
+      <p>
+        Refer to the whitepaper’s roadmap section. We’re launching new mini-games 
+        in phases, with the <strong>initial beta games</strong> going live soon 
+        and more comedic/satirical titles rolling out monthly.
+      </p>
+      <p>
+        <em>Key Milestones:</em><br/>
+        - Alpha mini-game release triggers tax drop to 6–8%.<br/>
+        - CertiK (or similar) audit for added security.<br/>
+        - NFT marketplace for rare “Golden Sloth” rewards.
+      </p>
+    </section>
+
+    <section class="doc-section">
+      <h2>Advanced Tech Info</h2>
+      <p>
+        The $PROC smart contract is designed with multi-signature security for 
+        treasury, team, and gaming wallets. We support on-chain governance updates 
+        (within reason) to remain agile. For in-depth contract details, see the 
+        <strong>“Future-Proof Architecture”</strong> section in the whitepaper.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 PROC. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PROC - Procrastination Has Never Been More Profitable</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-brand" onclick="goToPage('index.html')">
+      <img src="images/ProcLogo.png" alt="Sloth Logo" class="logo"/>
+      <span>PROC</span>
+    </div>
+    <ul class="nav-links">
+      <li onclick="goToPage('dashboard.html')">Dashboard</li>
+      <li onclick="goToPage('minigames.html')">Mini-Games</li>
+      <li onclick="goToPage('leaderboards.html')">Leaderboards</li>
+      <li onclick="goToPage('chat.html')">Chat</li>
+      <li onclick="goToPage('docs.html')">Docs</li>
+      <li onclick="goToPage('disclaimers.html')">Disclaimer</li>
+      <li onclick="goToPage('news.html')">News</li>
+      <li onclick="goToPage('whitepaper.html')">Whitepaper</li>
+      <li><a href="https://bscscan.com/token/0x372dC085148adDeA482671473BFa97a27DEA7081" target="_blank">📜 Contract</a></li>
+      <li onclick="goToPage('how-to-buy.html')">How to Buy PROC</li>
+
+    </ul>
+    <button class="btn neon-btn" onclick="connectWallet()">Connect Wallet</button>
+  </nav>
+
+
+
+<script>
+  function copyContractAddress() {
+    navigator.clipboard.writeText("0x372dC085148adDeA482671473BFa97a27DEA7081").then(() => {
+      alert("Contract Address Copied!");
+    });
+  }
+  </script>
+  <script src="js/main.js"></script>
+<script>
+async function connectWallet() {
+    if (typeof window.ethereum !== "undefined") {
+        try {
+            // Connect to MetaMask or another Web3 provider
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            await window.ethereum.request({ method: "eth_requestAccounts" });
+            const signer = provider.getSigner();
+            const userAddress = await signer.getAddress();
+            console.log("✅ Connected Wallet:", userAddress);
+
+            // Check Network (BSC Mainnet)
+            const network = await provider.getNetwork();
+            if (network.chainId !== 56) {
+                await window.ethereum.request({
+                    method: "wallet_switchEthereumChain",
+                    params: [{ chainId: "0x38" }] // 56 = BSC Mainnet
+                });
+                console.log("✅ Switched to BSC Mainnet");
+            }
+
+            alert(`Wallet Connected: ${userAddress}`);
+            document.getElementById("connect-wallet").innerText = `Connected: ${userAddress.substring(0, 6)}...${userAddress.slice(-4)}`;
+
+        } catch (error) {
+            console.error("❌ Wallet connection failed:", error);
+            alert("Failed to connect wallet. Please try again.");
+        }
+    } else {
+        alert("MetaMask or a Web3-compatible wallet is required to connect.");
+    }
+}
+
+// Attach to Connect Wallet Button
+document.querySelector(".btn.neon-btn").addEventListener("click", connectWallet);
+</script>
+
+
+
+
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Procrastination Has Never Been More Profitable</h1>
+      <p>
+        Welcome to <strong>$PROC</strong>, the deflationary token on BSC that rewards you for holding
+        and gives you the lazy thrill of sloth-themed mini-games.
+      </p>
+      <button class="btn cta-btn" onclick="goToPage('dashboard.html')">Explore Dashboard</button>
+      <button class="btn neon-btn" onclick="connectWallet()">Connect Wallet</button>
+    </div>
+    <div class="hero-graphic">
+      <img src="images/_iridescent Sloth squad_ HODLing since Day 1._ with a neon digital crypto feel.jpg" alt="Futuristic Sloth" />
+    </div>
+  </section>
+
+  <!-- BUY PROC SECTION -->
+  <section class="buy-proc">
+    <h2>🔥 Buy $PROC Now 🔥</h2>
+    <p>Contract Address: 
+      <a href="https://bscscan.com/token/0x372dC085148adDeA482671473BFa97a27DEA7081" target="_blank">
+        0x372d...7081
+      </a>
+      <button onclick="copyContractAddress()" class="btn copy-btn">📋 Copy</button>
+    </p>
+    <a href="https://pancakeswap.finance/swap?outputCurrency=0x372dC085148adDeA482671473BFa97a27DEA7081" 
+       target="_blank" class="btn neon-btn">🚀 Buy on PancakeSwap 🚀</a>
+  </section>
+
+  <!-- ANNOUNCEMENT -->
+  <section class="announcement-bar">
+    <p>🎉 Breaking: $PROC is live on BSC! Mini-games coming soon. Stay tuned for the next big update! 🎉</p>
+  </section>
+
+  <!-- TEASER FOR MINI-GAMES -->
+  <section class="features">
+    <h2>Upcoming Features</h2>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <h3>Sloth Roulette</h3>
+        <p>Bet tokens, spin the wheel, and trust your luck. House edge: 2%.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Procrastination Poker</h3>
+        <p>A quick, lazy draw game for real PROC wagers. Top winners featured weekly!</p>
+      </div>
+      <div class="feature-item">
+        <h3>Idle Yield</h3>
+        <p>Earn more by simply waiting—harvest your gains on your own schedule.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 ProcrastinationCoin. All rights reserved. | <a href="news.html">Check Updates</a></p>
+  </footer>
+
+ 
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PROC Chat Board</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-brand" onclick="goToPage('index.html')">
+      <img src="images/ProcLogo.png" alt="Sloth Logo" class="logo"/>
+      <span>PROC</span>
+    </div>
+    <ul class="nav-links">
+      <li onclick="goToPage('dashboard.html')">Dashboard</li>
+      <li onclick="goToPage('minigames.html')">Mini-Games</li>
+      <li onclick="goToPage('leaderboards.html')">Leaderboards</li>
+      <li onclick="goToPage('chat.html')">Chat</li>
+      <li onclick="goToPage('docs.html')">Docs</li>
+      <li onclick="goToPage('disclaimers.html')">Disclaimer</li>
+      <li onclick="goToPage('news.html')">News</li>
+      <li onclick="goToPage('whitepaper.html')">Whitepaper</li>
+      <li><a href="https://bscscan.com/token/0x372dC085148adDeA482671473BFa97a27DEA7081" target="_blank">📜 Contract</a></li>
+      <li onclick="goToPage('how-to-buy.html')">How to Buy PROC</li>
+
+    </ul>
+    <button class="btn neon-btn" onclick="connectWallet()">Connect Wallet</button>
+  </nav>
+
+  <main class="chat-container">
+    <h1>Live Chat Board</h1>
+    <div class="chat-box" id="chatBox">
+      <!-- Chat messages will scroll here (placeholder) -->
+      <div class="chat-message system-message">System: Welcome to the PROC Chat!</div>
+      <div class="chat-message user-message">User 0x1234: Hello world!</div>
+    </div>
+    <div class="chat-input">
+      <input 
+        type="text" 
+        id="chatInputField" 
+        placeholder="Type your message here..." 
+        onkeyup="sendMessagePlaceholder(event)" 
+      />
+      <button class="btn chat-btn" onclick="sendChatPlaceholder()">Send</button>
+    </div>
+    <p class="note">*In the future, major wins or jackpots will auto-post here!</p>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 PROC. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

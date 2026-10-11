@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PROC Leaderboards</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-brand" onclick="goToPage('index.html')">
+      <img src="images/ProcLogo.png" alt="Sloth Logo" class="logo"/>
+      <span>PROC</span>
+    </div>
+    <ul class="nav-links">
+      <li onclick="goToPage('dashboard.html')">Dashboard</li>
+      <li onclick="goToPage('minigames.html')">Mini-Games</li>
+      <li onclick="goToPage('leaderboards.html')">Leaderboards</li>
+      <li onclick="goToPage('chat.html')">Chat</li>
+      <li onclick="goToPage('docs.html')">Docs</li>
+      <li onclick="goToPage('disclaimers.html')">Disclaimer</li>
+      <li onclick="goToPage('news.html')">News</li>
+      <li onclick="goToPage('whitepaper.html')">Whitepaper</li>
+      <li><a href="https://bscscan.com/token/0x372dC085148adDeA482671473BFa97a27DEA7081" target="_blank">📜 Contract</a></li>
+      <li onclick="goToPage('how-to-buy.html')">How to Buy PROC</li>
+    </ul>
+    <button class="btn neon-btn" onclick="connectWallet()">Connect Wallet</button>
+  </nav>
+
+  <!-- Flash Buy Competition Leaderboard -->
+  <section class="leaderboard-container">
+    <h1>Flash Sale - Top Net Buyers Leaderboard</h1>
+    <p>Tracking the highest net buyers during the current 24-hour PROC Flash Sale event.</p>
+    
+    <div class="leaderboard-section">
+      <table class="leaderboard-table">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Wallet Address</th>
+            <th>Total Buys</th>
+            <th>Total Sells</th>
+            <th>Net Buy</th>
+          </tr>
+        </thead>
+        <tbody id="flashBuyLeaderboard">
+          <tr><td colspan="5">Loading...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Weekly Top 10 -->
+  <section class="leaderboard-container">
+    <h1>Weekly Top 10 Mini-Game Winners</h1>
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Wallet Address</th>
+          <th>PROC Won</th>
+        </tr>
+      </thead>
+      <tbody id="weeklyLeaderboard">
+        <tr>
+          <td>1</td>
+          <td>0x1234...AbCd</td>
+          <td>10,000</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>0x6789...EfGh</td>
+          <td>8,500</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- All-Time High Scores -->
+  <section class="leaderboard-container">
+    <h1>All-Time High Scores</h1>
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Wallet Address</th>
+          <th>PROC Won</th>
+        </tr>
+      </thead>
+      <tbody id="allTimeLeaderboard">
+        <tr>
+          <td>1</td>
+          <td>0x9999...Wxyz</td>
+          <td>100,000</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>0xaaaa...bbbb</td>
+          <td>75,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Future Achievements -->
+  <section class="achievements-placeholder">
+    <h2>Future Achievements & Badges</h2>
+    <p>Play more games to earn unique sloth badges and NFT rewards.</p>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 PROC. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      startNetBuyerTracking();
+  });
+</script>
+
+</body>
+</html>

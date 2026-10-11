@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PROC Mini-Games</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-brand" onclick="goToPage('index.html')">
+      <img src="images/ProcLogo.png" alt="Sloth Logo" class="logo"/>
+      <span>PROC</span>
+    </div>
+    <ul class="nav-links">
+      <li onclick="goToPage('dashboard.html')">Dashboard</li>
+      <li onclick="goToPage('minigames.html')">Mini-Games</li>
+      <li onclick="goToPage('leaderboards.html')">Leaderboards</li>
+      <li onclick="goToPage('chat.html')">Chat</li>
+      <li onclick="goToPage('docs.html')">Docs</li>
+      <li onclick="goToPage('disclaimers.html')">Disclaimer</li>
+      <li onclick="goToPage('news.html')">News</li>
+      <li onclick="goToPage('whitepaper.html')">Whitepaper</li>
+      <li><a href="https://bscscan.com/token/0x372dC085148adDeA482671473BFa97a27DEA7081" target="_blank">📜 Contract</a></li>
+      <li onclick="goToPage('how-to-buy.html')">How to Buy PROC</li>
+
+    </ul>
+    <button class="btn neon-btn" onclick="connectWallet()">Connect Wallet</button>
+  </nav>
+
+  <main class="games-container">
+    <h1>Mini-Games (Coming Soon)</h1>
+    <p>Browse our massive lineup of future sloth-themed, satirical, and high-octane crypto mini-games. Stay tuned for release dates!</p>
+
+    <div class="game-grid">
+
+      <!-- 1. Token Burn Roulette -->
+      <div class="game-card">
+        <h3>Token Burn Roulette</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>Burn 10 $PROC per spin. 1/10 chance to win 100 $PROC, or face the burn!</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- 2. Elon’s Mars Rocket Race -->
+      <div class="game-card">
+        <h3>Elon’s Mars Rocket Race</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>Bet on rocket-powered sloths. First to Mars wins 5x the entry fee!</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- 3. Trump Tower Tycoon -->
+      <div class="game-card">
+        <h3>Trump Tower Tycoon</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>Stack golden $PROC coins to build a tower. Earn YUGE bonuses, or risk a collapse!</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- 4. SBF’s Liquidity Pool -->
+      <div class="game-card">
+        <h3>SBF’s Liquidity Pool</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>Rescue sloth tokens from a draining pool. 20% of rescued tokens are burned!</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- 5. CZ’s Binance Brawl -->
+      <div class="game-card">
+        <h3>CZ’s Binance Brawl</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>Two sloths enter, one sloth leaves. Bet on the winner—5% of the pot is burned!</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- 6. Vitalik’s Puzzle -->
+      <div class="game-card">
+        <h3>Vitalik’s Puzzle</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>Solve Ethereum-themed riddles. Win 10 $PROC for correct answers, or burn 2 on mistakes!</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- 7. Sloth vs. Bear Market -->
+      <div class="game-card">
+        <h3>Sloth vs. Bear Market</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>Dodge red candles and collect green rockets! Survive 60s for 20 $PROC.</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- 8. HODL Olympics -->
+      <div class="game-card">
+        <h3>HODL Olympics</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>Balance tokens on a sloth’s head. Lasting 30+ seconds nets 50 $PROC.</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- 9. NFT Tree Climb -->
+      <div class="game-card">
+        <h3>NFT Tree Climb</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>Climb the blockchain tree to grab NFT leaves. A rare Golden Leaf pays 100 $PROC!</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- 10. Procrasti-Pong -->
+      <div class="game-card">
+        <h3>Procrasti-Pong</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>Retro Pong, but slower = better. Impulsive hits burn 1 $PROC per miss!</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- 11. FOMO Frenzy -->
+      <div class="game-card">
+        <h3>FOMO Frenzy</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>Wait to earn 2 $PROC/sec. Clicking frantically burns 5 $PROC each!</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- 12. Rug Pull Reflex -->
+      <div class="game-card">
+        <h3>Rug Pull Reflex</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>Escape the rug pull in 1 second or lose your entire bet!</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- 13. Bull Run Bonanza -->
+      <div class="game-card">
+        <h3>Bull Run Bonanza</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>Surf rockets through green candles! Hit 'the Top' to cash out big.</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- 14. Tax Season Escape -->
+      <div class="game-card">
+        <h3>Tax Season Escape</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>Dodge IRS drones for 30s to earn “tax-free” $PROC (no burn)!</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- 15. Halving Hunger Games -->
+      <div class="game-card">
+        <h3>Halving Hunger Games</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>24 sloths fight for 1,000 $PROC. Last sloth standing wins half the pot!</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- 16. Mining Laziness -->
+      <div class="game-card">
+        <h3>Mining Laziness</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>Sloth naps on a GPU to “mine” 1 $PROC/hour. Upgrades cost burned tokens.</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- 17. Staking Sleepover -->
+      <div class="game-card">
+        <h3>Staking Sleepover</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>Lock $PROC in a cozy pillow fort for up to 15% APY. Early exit burns 10%!</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- 18. Airdrop Avalanche -->
+      <div class="game-card">
+        <h3>Airdrop Avalanche</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>Catch falling $PROC, dodge “rekt” bombs. Each bomb burns 5 $PROC!</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- Original 3 from best-of-both-worlds plan (or rename them) -->
+      <!-- 19. Sloth Roulette (similar to Token Burn Roulette, but let's keep it separate) -->
+      <div class="game-card">
+        <h3>Sloth Roulette</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>Classic roulette with a sloth twist. Spin and bet your $PROC!</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- 20. Coin Flip Battle -->
+      <div class="game-card">
+        <h3>Coin Flip Battle</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>50/50 PvP bets; winner takes 95% of the pot, 5% burned!</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+      <!-- 21. Procrastination Poker -->
+      <div class="game-card">
+        <h3>Procrastination Poker</h3>
+        <img src="images/ProcComingSoon.jpg"" alt="Futuristic Sloth" />
+        <p>A lazy draw game with a slight house edge. Level up for better odds!</p>
+        <button class="btn disabled-btn" disabled>Coming Soon</button>
+      </div>
+
+    </div> <!-- end game-grid -->
+
+    <p style="margin-top:2rem;">
+      *Disclaimer: These mini-games are purely satirical, referencing public figures for comedic effect. 
+      PROC is not affiliated with any real individuals or entities mentioned. 
+      All visuals and names are parodies for entertainment.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 PROC. All rights reserved.</p>
+  </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

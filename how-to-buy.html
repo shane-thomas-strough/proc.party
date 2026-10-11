@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How to Buy PROC - Beginner's Guide</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-brand" onclick="goToPage('index.html')">
+      <img src="images/ProcLogo.png" alt="Sloth Logo" class="logo"/>
+      <span>PROC</span>
+    </div>
+    <ul class="nav-links">
+      <li onclick="goToPage('index.html')">Home</li>
+      <li onclick="goToPage('dashboard.html')">Dashboard</li>
+      <li onclick="goToPage('minigames.html')">Mini-Games</li>
+      <li onclick="goToPage('leaderboards.html')">Leaderboards</li>
+      <li onclick="goToPage('chat.html')">Chat</li>
+      <li onclick="goToPage('docs.html')">Docs</li>
+      <li onclick="goToPage('news.html')">News</li>
+      <li class="active" onclick="goToPage('how-to-buy.html')">How to Buy PROC</li>
+    </ul>
+    <button class="btn neon-btn" onclick="connectWallet()">Connect Wallet</button>
+  </nav>
+
+  <!-- HOW TO BUY PROC SECTION -->
+  <main class="buy-guide">
+    <h1 class="center-text">How to Buy $PROC - The Easiest Guide</h1>
+    <p class="center-text">Follow these simple steps to buy PROC, even if you’ve never used crypto before.</p>
+
+    <section class="step">
+      <h2>Step 1: Install MetaMask</h2>
+      <p>First, install <strong>MetaMask</strong>, your secure crypto wallet. Available for Chrome, Firefox, and mobile.</p>
+      <a href="https://metamask.io/download/" target="_blank" class="btn neon-btn">Download MetaMask</a>
+    </section>
+
+    <section class="step">
+      <h2>Step 2: Buy BNB Directly in MetaMask</h2>
+      <p>You don’t need to sign up for an exchange! Buy BNB inside MetaMask with a debit/credit card:</p>
+      <ol>
+        <li>Open MetaMask and select <strong>Binance Smart Chain (BSC Mainnet)</strong> from the <strong>top-left network selector</strong>.</li>
+        <li>Click <strong>"Buy & Sell"</strong> (or "Buy" on mobile).</li>
+        <li>Choose a payment provider and follow the instructions.</li>
+        <li>Once purchased, BNB will appear in your MetaMask wallet.</li>
+      </ol>
+      <a href="https://portfolio.metamask.io/buy" target="_blank" class="btn neon-btn">Buy BNB Now</a>
+    </section>
+
+    <section class="step">
+      <h2>Step 3: Swap BNB for PROC on PancakeSwap</h2>
+      <p>Now that you have BNB, swap it for PROC using <strong>PancakeSwap</strong>:</p>
+      <ol>
+        <li>Go to <a href="https://pancakeswap.finance/swap?outputCurrency=0x372dC085148adDeA482671473BFa97a27DEA7081" target="_blank">PancakeSwap</a>.</li>
+        <li>Click <strong>"Connect Wallet"</strong> and select MetaMask.</li>
+        <li>Set the output currency to <strong>PROC</strong> (or paste this contract: <code>0x372dC085148adDeA482671473BFa97a27DEA7081</code>).</li>
+        <li>Enter the amount of BNB you want to swap.</li>
+        <li>Set <strong>slippage to 15-20%</strong>, then click <strong>"Swap"</strong>.</li>
+      </ol>
+      <a href="https://pancakeswap.finance/swap?outputCurrency=0x372dC085148adDeA482671473BFa97a27DEA7081" target="_blank" class="btn neon-btn">Buy PROC on PancakeSwap</a>
+    </section>
+
+    <section class="step">
+      <h2>Step 4: Add PROC to MetaMask</h2>
+      <p>After buying PROC, add it to MetaMask:</p>
+      <ol>
+        <li>Open MetaMask and go to <strong>"Assets"</strong>.</li>
+        <li>Click <strong>"Import Tokens"</strong>.</li>
+        <li>Paste the PROC contract address: <code>0x372dC085148adDeA482671473BFa97a27DEA7081</code>.</li>
+        <li>Click <strong>"Add Custom Token"</strong>.</li>
+      </ol>
+      <p>Now, you’ll see your PROC balance in MetaMask! 🎉</p>
+    </section>
+
+    <section class="step disclaimer">
+      <h2>Smart Money Moves: </h2>
+      <h2>Understanding PROC’s Built-in Benefits</h2>
+      <p>
+        Just bought PROC and noticed **you have slightly less than expected?**  
+        Relax, you haven’t been rugged—**this is totally normal!** 🚀
+      </p>
+      <p>
+        PROC has a **built-in tax and reflection mechanism**, meaning a portion of every transaction is:
+      </p>
+      <ul>
+        <li>🔥 **Burned forever**, reducing supply.</li>
+        <li>💸 **Redistributed to existing PROC holders** as reflections (a fancy word for *lazy money*).</li>
+        <li>📈 **Helping the ecosystem grow** by rewarding long-term holders.</li>
+      </ul>
+      <p>
+        So, while you *technically* got fewer PROC than expected, you're now earning reflections  
+        **just for existing**—which is probably the laziest way to make money in crypto. 🦥💰  
+        *Holding PROC: The Ultimate Passive Income Flex.*
+      </p>
+    </section>
+<script>
+  function copyContractAddress() {
+    navigator.clipboard.writeText("0x372dC085148adDeA482671473BFa97a27DEA7081").then(() => {
+      alert("Contract Address Copied!");
+    });
+  }
+  </script>
+  <script src="js/main.js"></script>
+<script>
+async function connectWallet() {
+    if (typeof window.ethereum !== "undefined") {
+        try {
+            // Connect to MetaMask or another Web3 provider
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            await window.ethereum.request({ method: "eth_requestAccounts" });
+            const signer = provider.getSigner();
+            const userAddress = await signer.getAddress();
+            console.log("✅ Connected Wallet:", userAddress);
+
+            // Check Network (BSC Mainnet)
+            const network = await provider.getNetwork();
+            if (network.chainId !== 56) {
+                await window.ethereum.request({
+                    method: "wallet_switchEthereumChain",
+                    params: [{ chainId: "0x38" }] // 56 = BSC Mainnet
+                });
+                console.log("✅ Switched to BSC Mainnet");
+            }
+
+            alert(`Wallet Connected: ${userAddress}`);
+            document.getElementById("connect-wallet").innerText = `Connected: ${userAddress.substring(0, 6)}...${userAddress.slice(-4)}`;
+
+        } catch (error) {
+            console.error("❌ Wallet connection failed:", error);
+            alert("Failed to connect wallet. Please try again.");
+        }
+    } else {
+        alert("MetaMask or a Web3-compatible wallet is required to connect.");
+    }
+}
+
+// Attach to Connect Wallet Button
+document.querySelector(".btn.neon-btn").addEventListener("click", connectWallet);
+</script>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 PROC. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

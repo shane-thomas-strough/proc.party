@@ -1,0 +1,59 @@
+/*****************************************************
+ * main.js - Hybrid Placeholder + Future Expandability
+ *****************************************************/
+
+/** 
+ * goToPage - Simple function to navigate between pages.
+ */
+function goToPage(page) {
+  window.location.href = page;
+}
+
+/**
+ * connectWalletPlaceholder - For now, just an alert to show 
+ * where you'd integrate actual wallet connection logic (e.g. ethers.js).
+ */
+function connectWalletPlaceholder() {
+  alert("Wallet connect feature coming soon! This is where you'd integrate web3modal or ethers.js.");
+  // In future:
+  // 1. Integrate web3modal or ethers.js
+  // 2. Request accounts
+  // 3. Display user address & update balances
+}
+
+/**
+ * sendChatPlaceholder - A placeholder function for sending chat messages.
+ */
+function sendChatPlaceholder() {
+  let inputField = document.getElementById("chatInputField");
+  let message = inputField.value.trim();
+  if (message.length > 0) {
+    addChatMessage("You", message);
+    inputField.value = "";
+  }
+}
+
+/**
+ * sendMessagePlaceholder - Trigger sending on Enter key press.
+ */
+function sendMessagePlaceholder(event) {
+  if (event.key === "Enter") {
+    sendChatPlaceholder();
+  }
+}
+
+/**
+ * addChatMessage - Adds a new message to the chat box.
+ */
+function addChatMessage(user, message) {
+  const chatBox = document.getElementById("chatBox");
+  if (!chatBox) return;
+
+  let messageDiv = document.createElement("div");
+  messageDiv.classList.add("chat-message", "user-message");
+  messageDiv.textContent = `${user}: ${message}`;
+  chatBox.appendChild(messageDiv);
+
+  // Auto-scroll to bottom
+  chatBox.scrollTop = chatBox.scrollHeight;
+}

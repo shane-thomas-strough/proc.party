@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PROC Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-brand" onclick="goToPage('index.html')">
+      <img src="images/ProcLogo.png" alt="Sloth Logo" class="logo"/>
+      <span>PROC</span>
+    </div>
+    <ul class="nav-links">
+      <li onclick="goToPage('dashboard.html')">Dashboard</li>
+      <li onclick="goToPage('minigames.html')">Mini-Games</li>
+      <li onclick="goToPage('leaderboards.html')">Leaderboards</li>
+      <li onclick="goToPage('chat.html')">Chat</li>
+      <li onclick="goToPage('docs.html')">Docs</li>
+      <li onclick="goToPage('disclaimers.html')">Disclaimer</li>
+      <li onclick="goToPage('news.html')">News</li>
+      <li onclick="goToPage('whitepaper.html')">Whitepaper</li>
+      <li><a href="https://bscscan.com/token/0x372dC085148adDeA482671473BFa97a27DEA7081" target="_blank">📜 Contract</a></li>
+      <li onclick="goToPage('how-to-buy.html')">How to Buy PROC</li>
+
+    </ul>
+    <button class="btn neon-btn" onclick="connectWallet()">Connect Wallet</button>
+  </nav>
+
+
+
+
+  <!-- DASHBOARD CONTENT -->
+  <main class="dashboard-container">
+    <h1>Dashboard</h1>
+    <p>Connect your wallet to see real-time data once APIs are integrated.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+    <h2>PROC Price</h2>
+    <p id="procPrice">Loading...</p>
+</div>
+<div class="stat-card">
+    <h2>Market Cap</h2>
+    <p id="marketCap">Loading...</p>
+</div>
+
+      <div class="stat-card">
+        <h2>Your Balance</h2>
+        <p id="userBalance">Connect Wallet</p>
+      </div>
+      <div class="stat-card">
+        <h2>Reflections Earned</h2>
+        <p id="userReflections">Coming Soon</p>
+      </div>
+    </div>
+
+    <div class="staking-placeholder">
+      <h3>Future Feature: Staking & Idle Gains</h3>
+      <p>Stake your $PROC and earn passive yield while you wait.</p>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 ProcrastinationCoin. All rights reserved.</p>
+  </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

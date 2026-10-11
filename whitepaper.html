@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>$PROC Whitepaper – Earn While You Wait</title>
+  <!-- Use your main site stylesheet for consistent design -->
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Override or add some custom styling for the whitepaper page if needed */
+    .whitepaper-container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background-color: #1c1c1c; /* matching the rest of the site’s dark background */
+      padding: 2rem;
+      border-radius: 8px;
+      color: #f0f0f0;
+    }
+    .whitepaper-container h1,
+    .whitepaper-container h2,
+    .whitepaper-container h3 {
+      color: var(--neon-green); /* from style.css root variable */
+      margin-bottom: 1rem;
+    }
+    .whitepaper-container p, 
+    .whitepaper-container ul {
+      margin-bottom: 1rem;
+    }
+    .whitepaper-container ul {
+      list-style: disc;
+      margin-left: 1.5rem;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    /* Make headings pop a bit more */
+    .whitepaper-container h1 {
+      font-size: 2.2rem;
+    }
+    .whitepaper-container h2 {
+      font-size: 1.5rem;
+    }
+    .whitepaper-container h3 {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-brand" onclick="goToPage('index.html')">
+      <img src="images/ProcLogo.png" alt="Sloth Logo" class="logo"/>
+      <span>PROC</span>
+    </div>
+    <ul class="nav-links">
+      <li onclick="goToPage('dashboard.html')">Dashboard</li>
+      <li onclick="goToPage('minigames.html')">Mini-Games</li>
+      <li onclick="goToPage('leaderboards.html')">Leaderboards</li>
+      <li onclick="goToPage('chat.html')">Chat</li>
+      <li onclick="goToPage('docs.html')">Docs</li>
+      <li onclick="goToPage('disclaimers.html')">Disclaimer</li>
+      <li onclick="goToPage('news.html')">News</li>
+      <li onclick="goToPage('whitepaper.html')">Whitepaper</li>
+      <li><a href="https://bscscan.com/token/0x372dC085148adDeA482671473BFa97a27DEA7081" target="_blank">📜 Contract</a></li>
+      <li onclick="goToPage('how-to-buy.html')">How to Buy PROC</li>
+    </ul>
+    <button class="btn neon-btn" onclick="connectWallet()">Connect Wallet</button>
+  </nav>
+
+  <!-- MAIN WHITEPAPER CONTENT -->
+  <div class="whitepaper-container">
+    <h1>$PROC Whitepaper – Earn While You Wait</h1>
+    <p><em>Stay patient and prosper—let mathematics and strategy fuel your gains.</em></p>
+
+    <!-- 1. Executive Summary -->
+    <div class="section">
+      <h2>1. Executive Summary</h2>
+      <p>
+        <strong>ProcrastinationCoin ($PROC)</strong> is a deflationary, community-driven token on Binance Smart Chain (BSC) designed to reward patience through reflection, controlled burns, and a two-phase tax structure. Inspired by the Fibonacci sequence and π (pi), PROC’s tokenomics incorporate mathematical elegance while remaining accessible and engaging for both investors and gamers.
+      </p>
+      <p><strong>Key Features:</strong></p>
+      <ul>
+        <li><strong>Deflationary Tokenomics:</strong> Ongoing burns (linked to pi-threshold logic) steadily reduce supply.</li>
+        <li><strong>Two-Phase Tax:</strong> Launch phase (16% total) automatically shifts to a Sustain phase (10% total) after ~60 days—or earlier if forced—ensuring adaptability and longevity.</li>
+        <li><strong>Reflections:</strong> A portion of every transaction is redistributed to holders, boosting wallet balances over time.</li>
+        <li><strong>Community-Driven Ecosystem:</strong> Mini-games, staking, and consistent marketing feed both project growth and token utility.</li>
+        <li><strong>Fair Launch Model:</strong> No presale, with liquidity added directly on PancakeSwap.</li>
+      </ul>
+    </div>
+
+    <!-- 2. Tokenomics & Supply -->
+    <div class="section">
+      <h2>2. Tokenomics & Supply</h2>
+      <p><strong>Total Supply:</strong> 1,618,033,988,000 PROC (derived from the Fibonacci sequence).</p>
+      <p>
+        <strong>Reflections & Burns:</strong> Reflection fees automatically reward holders in proportion to their holdings, and the burn mechanism removes tokens from circulation permanently.
+      </p>
+      <h3>Phase 1 (Launch Fees: 16% total)</h3>
+      <ul>
+        <li>4% Reflection – Redistributed to all holders.</li>
+        <li>2% Burn – Permanently removes tokens from circulation.</li>
+        <li>3% Liquidity – Builds liquidity, promoting price stability.</li>
+        <li>3% Marketing – Fuels awareness campaigns, listings, and strategic partnerships.</li>
+        <li>2% Development – Funds ongoing improvements, audits, and new features.</li>
+        <li>2% Gaming – Supports community rewards, prize pools, and staking incentives.</li>
+      </ul>
+      <h3>Phase 2 (Sustain Fees: 10% total)</h3>
+      <ul>
+        <li>Activates automatically ~60 days after launch (or earlier via the <code>forceSustainPhase()</code> function in the contract).</li>
+        <li>4% Reflection</li>
+        <li>1% Burn</li>
+        <li>2% Liquidity</li>
+        <li>1% Marketing</li>
+        <li>1% Development</li>
+        <li>1% Gaming</li>
+      </ul>
+      <p>
+        <strong>Note on Pi-Threshold:</strong> If the total supply ever drops below a pi-based threshold (piThreshold in the contract), the burn allocation is redirected to reflections, accelerating rewards for holders once supply is sufficiently reduced.
+      </p>
+    </div>
+
+    <!-- 3. Roadmap -->
+    <div class="section">
+      <h2>3. Roadmap</h2>
+      <p>PROC’s roadmap is milestone-driven rather than rigidly time-bound. Major phases include:</p>
+      <h3>Phase 1: Launch & Liquidity</h3>
+      <ul>
+        <li>Token deployment and PancakeSwap liquidity addition.</li>
+        <li>Begin with 16% launch fees to fund marketing, development, and liquidity.</li>
+        <li>Kickoff marketing campaigns and community-building (Telegram, Twitter, Discord).</li>
+      </ul>
+      <h3>Phase 2: Sustain Transition</h3>
+      <ul>
+        <li>Automatic fee adjustment to 10% after ~60 days (or earlier via forced sustain).</li>
+        <li>Introduce staking (Idle Yield) and initial community mini-games.</li>
+        <li>Ramp up partnerships and influencer collaborations.</li>
+      </ul>
+      <h3>Phase 3: Ecosystem Expansion</h3>
+      <ul>
+        <li>Release additional games that are meme-friendly and reward-focused.</li>
+        <li>Undergo a CertiK (or equivalent) audit for heightened transparency.</li>
+        <li>Initiate DAO-style governance discussions for further tax changes.</li>
+      </ul>
+      <h3>Phase 4: Cross-Chain Growth & Sustainability</h3>
+      <ul>
+        <li>Explore bridges to other networks (e.g., Polygon, Ethereum).</li>
+        <li>Potential CEX listings once the project meets volume requirements.</li>
+        <li>Ongoing marketing and community-driven expansions.</li>
+      </ul>
+    </div>
+
+    <!-- 4. Utility & Community Engagement -->
+    <div class="section">
+      <h2>4. Utility & Community Engagement</h2>
+      <ul>
+        <li><strong>Reflections:</strong> Passive yield for holding.</li>
+        <li><strong>Mini-Games & Gamification:</strong> Sloth-themed mini-games (roulette, poker, etc.) drive organic demand for PROC to play and earn.</li>
+        <li><strong>Future Staking:</strong> “Idle Yield” mechanics reward users for simply holding or staking.</li>
+        <li><strong>Organic Meme Culture:</strong> Sloth-themed memes and social media challenges boost community spirit, encouraging holders to spread the word and drive healthy FOMO.</li>
+      </ul>
+    </div>
+
+    <!-- 5. Security & Transparency -->
+    <div class="section">
+      <h2>5. Security & Transparency</h2>
+      <ul>
+        <li><strong>Contract Code Verified:</strong> The PROC smart contract is public and verifiable.</li>
+        <li><strong>Time-Based Fee Logic:</strong> The shift from Launch fees to Sustain fees is automated by a timestamp check in <code>_getFeeRates()</code>.</li>
+        <li><strong>Liquidity Locked:</strong> A significant portion of liquidity is locked to enhance confidence.</li>
+        <li><strong>Ownership Controls:</strong> The owner can adjust fees (up to a maximum of 25%) and force the Sustain phase early, but cannot exceed these security-limited parameters.</li>
+        <li><strong>Audits:</strong> Third-party security audits are planned for major updates.</li>
+      </ul>
+    </div>
+
+    <!-- 6. Call to Action -->
+    <div class="section">
+      <h2>6. Call to Action</h2>
+      <ul>
+        <li><strong>Buy & Hold $PROC on PancakeSwap:</strong> Benefit from reflections, upcoming mini-games, and community events.</li>
+        <li><strong>Join Our Community:</strong> Engage on Telegram, Discord, or Twitter. Share memes, get updates, and collaborate on shaping the roadmap.</li>
+        <li><strong>Partnerships Welcome:</strong> Game developers, crypto influencers, and yield-farming platforms—reach out to discuss integrations and cross-promotions.</li>
+      </ul>
+      <p>
+        Stay patient and prosper—the essence of ProcrastinationCoin is to reward those who embrace a slow, steady, and strategic approach. Grow with us, hold, and watch as token burns and reflections shape an ever-scarcer, ever-more-rewarding asset.
+      </p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 PROC. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
